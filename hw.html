@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <label>Enter number: </label>
+    <input type="number" id="myinput"><br><br>
+
+    <button onclick="add_num()">Add number</button><br><br>
+    <button onclick="myascending()">Ascending order</button><br><br>
+    <button onclick="mydescending()">Descending order</button><br><br>
+    <p id="result"></p>
+
+    <script>
+        var list = [];
+
+        function add_num() {
+            var num = Number(document.getElementById("myinput").value);
+            list.push(num);
+            document.getElementById("result").innerHTML = list;
+            document.getElementById("myinput").value = '';
+        }
+
+        function myascending() {
+            var newarray = list.slice().sort(function (a, b) { return a - b });
+            document.getElementById("result").innerHTML = newarray;
+        }
+
+        function mydescending() {
+            var newarray = list.slice().sort(function (a, b) { return b - a });
+            document.getElementById("result").innerHTML = newarray;
+        }
+    </script>
+</body>
+
+</html>
